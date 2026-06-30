@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>კონტაქტი — GEO Explore</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <img class="brand__mark" src="./assets/logo.png" alt="GEO Explore" />
+          GEO <span style="color: #c1623b">Explore</span>
+        </a>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="explore.html">ამინდის შემოწმება</a></li>
+          <li><a href="wishlist.html">ჩემი გეგმა</a></li>
+          <li><a href="contact.html" class="active">კონტაქტი</a></li>
+        </ul>
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="მენიუს გახსნა/დახურვა"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" style="padding-top: 64px">
+        <div
+          class="grid"
+          style="grid-template-columns: 1fr 1fr; align-items: start"
+        >
+          <div>
+            <h1>დაგვიკავშირდი</h1>
+            <p class="lede">
+              დაგვიკავშირდი ნებისმიერი კითხვის არსებობის შემთხვევაში.
+            </p>
+            <ul
+              style="
+                margin-top: 2em;
+                display: grid;
+                gap: 14px;
+                font-size: 0.92rem;
+              "
+            >
+              <li>✉️ Geo@explore.ge</li>
+              <li>📍 თბილისი, საქართველო</li>
+            </ul>
+          </div>
+
+          <form class="form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">სახელი</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="თქვენი სახელი"
+                required
+                minlength="2"
+              />
+            </div>
+            <div class="field">
+              <label for="email">ელფოსტა</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="message">შეტყობინება</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="დაგვიწერეთ..."
+                required
+                minlength="10"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">გაგზავნა</button>
+
+            <div class="form__success" id="formSuccess">
+              ✓ მადლობა! შეტყობინება მიღებულია.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="color: #fffaf3; margin-bottom: 0.6em">
+            GEO Explore
+          </div>
+          <p style="opacity: 0.75; max-width: 32ch">
+            ცოცხალი ამინდი + პირადი გეგმა საქართველოს მთიანი ბილიკებისთვის.
+          </p>
+        </div>
+        <div>
+          <h4>გვერდები</h4>
+          <a href="index.html">მთავარი</a>
+          <a href="explore.html">ამინდის შემოწმება</a>
+          <a href="wishlist.html">ჩემი გეგმა</a>
+        </div>
+        <div>
+          <h4>კავშირი</h4>
+          <a href="contact.html">კონტაქტი</a>
+          <a href="mailto:Geo@explore.ge">GEO@explore.ge</a>
+        </div>
+        <div>
+          <h4>API</h4>
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener"
+            >Open-Meteo (data source)</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GEORGIA explore. საფინალო პროექტი.</span>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner">
+      <p>
+        ეს საიტი იყენებს localStorage-ს მხოლოდ თქვენი "ჩემი გეგმა" სიის
+        შესანახად — გარეშე ტრეკინგის გარეშე.
+      </p>
+      <button class="btn btn--primary btn--sm" id="cookieAccept">
+        გასაგებია
+      </button>
+    </div>
+
+    <button
+      class="scroll-top-btn"
+      id="scrollTopBtn"
+      aria-label="ზევით დაბრუნება"
+    >
+      ↑
+    </button>
+
+    <script src="js/trails-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const success = document.getElementById("formSuccess");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+            form.email.value.trim(),
+          );
+          if (
+            form.name.value.trim().length < 2 ||
+            !emailOk ||
+            form.message.value.trim().length < 10
+          ) {
+            form.reportValidity();
+            return;
+          }
+          form.reset();
+          success.classList.add("is-visible");
+          setTimeout(() => success.classList.remove("is-visible"), 5000);
+        });
+      });
+    </script>
+  </body>
+</html>

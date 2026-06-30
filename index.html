@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore — ამინდი საქართველოს ბილიკებზე</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <img class="brand__mark" src="./assets/logo.png" alt=" logo" />
+
+          GEO <span style="color: #c1623b">Explore</span>
+        </a>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html" class="active">მთავარი</a></li>
+          <li><a href="explore.html">ამინდის შემოწმება</a></li>
+          <li><a href="wishlist.html">ჩემი გეგმა</a></li>
+          <li><a href="contact.html">კონტაქტი</a></li>
+        </ul>
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="მენიუს გახსნა/დახურვა"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 1. HERO -->
+      <section class="hero">
+        <div>
+          <h1>დაგეგმე ლაშქრობაშა<br />ამინდის ცოდნით</h1>
+          <p class="lede">
+            Explore Georgia აერთებს ბილიკების კატალოგს ცოცხალ ამინდის
+            მონაცემებთან — შეამოწმე ტემპერატურა და ქარი მანამ, სანამ გზას
+            დაადგებოდე, და შეინახე საუკეთესო ბილიკები შენს გეგმაში.
+          </p>
+          <div
+            style="display: flex; gap: 16px; margin-top: 1.8em; flex-wrap: wrap"
+          >
+            <a href="explore.html" class="btn btn--primary"
+              >ამინდის შემოწმება</a
+            >
+            <a href="wishlist.html" class="btn btn--ghost">ჩემი გეგმა</a>
+          </div>
+        </div>
+        <div class="hero__img">
+          <img src="./images/heroimg.jpg" alt="mainimage" />
+        </div>
+      </section>
+
+      <span class="ridge"></span>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>ამჯერად ყაზბეგში...</h2>
+        </div>
+        <div
+          class="weather-card is-loading"
+          id="weatherCard"
+          style="max-width: 420px"
+        >
+          <div class="weather-card__icon">🌡️</div>
+          <div>
+            <div class="weather-card__temp">—</div>
+            <div class="weather-card__meta">იტვირთება...</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--mist">
+        <div class="section-head">
+          <h2>სამი ნაბიჯი ლაშქრობამდე</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <b>01</b>
+            <h3>აარჩიე ბილიკი</h3>
+            <p>
+              გადადი "ამინდის შემოწმება"-ზე და აარჩიე ბილიკი ჩამონათვალიდან.
+            </p>
+          </div>
+          <div class="step reveal">
+            <b>02</b>
+            <h3>გადახედე ამინდს</h3>
+            <p>
+              ცოცხალი ტემპერატურა და ქარის სიჩქარე ეხმარება გადაწყვეტილების
+              მიღებაში.
+            </p>
+          </div>
+          <div class="step reveal">
+            <b>03</b>
+            <h3>დაამატე გეგმაში</h3>
+            <p>შეინახე ბილიკი "ჩემი გეგმა"-ში</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>ბილიკები, რომლებზეც შეგიძლია ამინდის შემოწმება</h2>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <img src="./images/gergeti.jpg" alt="Gergeti" />
+            <div class="card__body">
+              <span class="card__tag">ყაზბეგი</span>
+              <h3>გერგეტის მყინვარი</h3>
+              <div class="card__meta">
+                <span>↑ 900მ</span><span>⏱ 6-7სთ</span>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img src="./images/koruldi-lake.jpg" alt="" />
+            <!-- <div class="card__media"></div> -->
+            <div class="card__body">
+              <span class="card__tag">სვანეთი</span>
+              <h3>კორულდის ტბები</h3>
+              <div class="card__meta">
+                <span>↑ 1100მ</span><span>⏱ 7-8სთ</span>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img src="./images/atsundi.jpg" alt="" />
+            <div class="card__body">
+              <span class="card__tag">თუშეთი</span>
+              <h3>აწუნთის უღელტეხილი</h3>
+              <div class="card__meta">
+                <span>↑ 1500მ</span><span>⏱ 3 დღე</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div style="text-align: center; margin-top: 48px">
+          <a href="explore.html" class="btn btn--primary"
+            >ყველას ნახვა და ამინდის შემოწმება</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="color: #fffaf3; margin-bottom: 0.6em">
+            Geo Explore
+          </div>
+          <p style="opacity: 0.75; max-width: 32ch">
+            ცოცხალი ამინდი + პირადი გეგმა საქართველოს მთიანი ბილიკებისთვის.
+          </p>
+        </div>
+        <div>
+          <h4>გვერდები</h4>
+          <a href="index.html">მთავარი</a>
+          <a href="explore.html">ამინდის შემოწმება</a>
+          <a href="wishlist.html">ჩემი გეგმა</a>
+        </div>
+        <div>
+          <h4>კავშირი</h4>
+          <a href="contact.html">კონტაქტი</a>
+          <a href="mailto:hello@alpinda.ge">hello@alpinda.ge</a>
+        </div>
+        <div>
+          <h4>API</h4>
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener"
+            >Open-Meteo (data source)</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Geo Explore. საფინალო პროექტი.</span>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner">
+      <p>
+        ეს საიტი იყენებს localStorage-ს მხოლოდ თქვენი "ჩემი გეგმა" სიის
+        შესანახად — გარეშე ტრეკინგის გარეშე.
+      </p>
+      <button class="btn btn--primary btn--sm" id="cookieAccept">
+        გასაგებია
+      </button>
+    </div>
+
+    <button
+      class="scroll-top-btn"
+      id="scrollTopBtn"
+      aria-label="ზევით დაბრუნება"
+    >
+      ↑
+    </button>
+
+    <script src="js/trails-data.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // საწყისი გვერდის "ცოცხალი ამინდის" ბარათი — ყაზბეგის (Gergeti) კოორდინატებით
+      document.addEventListener("DOMContentLoaded", () => {
+        const kazbegi = TRAILS.find((t) => t.id === "gergeti");
+        if (kazbegi) {
+          renderWeatherCard(
+            document.getElementById("weatherCard"),
+            kazbegi.lat,
+            kazbegi.lon,
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

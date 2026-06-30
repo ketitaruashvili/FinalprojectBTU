@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ჩემი გეგმა — Geo Explore</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <img class="brand__mark" src="./assets/logo.png" alt="GEO Explore" />
+          GEO <span style="color: #c1623b">Explore</span>
+        </a>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="explore.html">ამინდის შემოწმება</a></li>
+          <li><a href="wishlist.html" class="active">ჩემი გეგმა</a></li>
+          <li><a href="contact.html">კონტაქტი</a></li>
+        </ul>
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="მენიუს გახსნა/დახურვა"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" style="padding-top: 64px">
+        <h1>შენახული ბილიკები</h1>
+
+        <div style="margin-top: 2.4em; max-width: 680px">
+          <div id="wishlistContainer"></div>
+
+          <div class="empty-state" id="emptyState">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path
+                d="M8 50 24 18l9 16 6-10 17 26H8Z"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <h3>გეგმა ჯერ ცარიელია</h3>
+            <p>
+              გადადი
+              <a href="explore.html" style="text-decoration: underline"
+                >ამინდის შემოწმება</a
+              >-ზე და დააჭირე „ჩემს გეგმაში დამატება“ ნებისმიერ ბილიკზე.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="color: #fffaf3; margin-bottom: 0.6em">
+            GEO Explore
+          </div>
+          <p style="opacity: 0.75; max-width: 32ch">
+            ცოცხალი ამინდი + პირადი გეგმა საქართველოს მთიანი ბილიკებისთვის.
+          </p>
+        </div>
+        <div>
+          <h4>გვერდები</h4>
+          <a href="index.html">მთავარი</a>
+          <a href="explore.html">ამინდის შემოწმება</a>
+          <a href="wishlist.html">ჩემი გეგმა</a>
+        </div>
+        <div>
+          <h4>კავშირი</h4>
+          <a href="contact.html">კონტაქტი</a>
+          <a href="mailto:GEO@explore.ge">GEO@explore.ge</a>
+        </div>
+        <div>
+          <h4>API</h4>
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener"
+            >Open-Meteo (data source)</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GEORGIA Explore. საფინალო პროექტი.</span>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner">
+      <button class="btn btn--primary btn--sm" id="cookieAccept">
+        გასაგებია
+      </button>
+    </div>
+
+    <button
+      class="scroll-top-btn"
+      id="scrollTopBtn"
+      aria-label="ზევით დაბრუნება"
+    >
+      ↑
+    </button>
+
+    <script src="js/trails-data.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
