@@ -1,1 +1,1 @@
-BTU FORNT_END ფინალური პროექტი
+BTU FRONT_END ფინალური პროექტი
