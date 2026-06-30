@@ -1,13 +1,4 @@
-/* ==========================================================================
-   ALPINDA EXPLORE — trails-data.js
-   ბილიკების მონაცემთა ბაზა (JS ობიექტების მასივი) + localStorage helper-ები.
-   ეს ფაილი ჩაირთვება ყველა გვერდზე, რათა ერთი წყარო ემსახურებოდეს
-   index.html-ს, explore.html-ს და wishlist.html-ს.
-   ========================================================================== */
-
-// თითოეულ ბილიკს აქვს ნამდვილი (მიახლოებითი) კოორდინატები —
-// ეს გვაძლევს საშუალებას ვიწვიოთ ცოცხალი ამინდის API ზუსტ წერტილზე.
-const TRAILS = [
+var TRAILS = [
   {
     id: "gergeti",
     name: "გერგეტის მყინვარი",
@@ -70,9 +61,7 @@ const TRAILS = [
   },
 ];
 
-// Open-Meteo-ის weathercode → მოკლე ქართული აღწერა + ემოჯი-აიქონი.
-// (Open-Meteo არ ითხოვს API key-ს და თავსებადია CORS-თან — იდეალურია სასწავლო პროექტისთვის)
-const WEATHER_CODES = {
+var WEATHER_CODES = {
   0: { label: "კრიალა", icon: "☀️" },
   1: { label: "ნაწილობრივ მოწმენდილი", icon: "🌤️" },
   2: { label: "ღრუბლიანი", icon: "⛅" },
@@ -89,37 +78,50 @@ const WEATHER_CODES = {
 };
 
 function weatherLabelFor(code) {
-  return WEATHER_CODES[code] || { label: "უცნობი ამინდი", icon: "🌡️" };
+  if (WEATHER_CODES[code]) {
+    return WEATHER_CODES[code];
+  } else {
+    return { label: "უცნობი ამინდი", icon: "🌡️" };
+  }
 }
 
-/* ---------- LOCALSTORAGE WISHLIST HELPERS ----------
-   ვინახავთ მხოლოდ trail ID-ების მასივს localStorage-ში key="alpinda_wishlist"-ით.
-   JSON.stringify/parse გვაძლევს მასივის შენახვა-წაკითხვის საშუალებას,
-   რადგან localStorage მხოლოდ string-ებს ინახავს. */
-const WISHLIST_KEY = "alpinda_wishlist";
+var WISHLIST_KEY = "alpinda_wishlist";
 
 function getWishlist() {
   try {
-    const raw = localStorage.getItem(WISHLIST_KEY);
-    return raw ? JSON.parse(raw) : [];
+    var raw = localStorage.getItem(WISHLIST_KEY);
+    if (raw) {
+      return JSON.parse(raw);
+    } else {
+      return [];
+    }
   } catch (e) {
     return [];
   }
 }
 
 function isInWishlist(trailId) {
-  return getWishlist().includes(trailId);
+  var list = getWishlist();
+  return list.indexOf(trailId) !== -1;
 }
 
 function addToWishlist(trailId) {
-  const list = getWishlist();
-  if (!list.includes(trailId)) {
+  var list = getWishlist();
+  if (list.indexOf(trailId) === -1) {
     list.push(trailId);
     localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
   }
 }
 
 function removeFromWishlist(trailId) {
-  const list = getWishlist().filter((id) => id !== trailId);
-  localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
+  var oldList = getWishlist();
+  var newList = [];
+
+  for (var i = 0; i < oldList.length; i++) {
+    if (oldList[i] !== trailId) {
+      newList.push(oldList[i]);
+    }
+  }
+
+  localStorage.setItem(WISHLIST_KEY, JSON.stringify(newList));
 }

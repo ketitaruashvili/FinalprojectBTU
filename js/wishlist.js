@@ -1,18 +1,11 @@
-/* ==========================================================================
-   ALPINDA EXPLORE — wishlist.js  (მხოლოდ wishlist.html-ისთვის)
-   კითხულობს localStorage-დან შენახულ trail ID-ებს, რენდერავს ბარათებად
-   და უზრუნველყოფს წაშლის ფუნქციონალს (to-do-list-ის ლოგიკის ანალოგი).
-   ========================================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  const listEl  = document.getElementById("wishlistContainer");
+  const listEl = document.getElementById("wishlistContainer");
   const emptyEl = document.getElementById("emptyState");
   if (!listEl) return;
 
   function render() {
     const ids = getWishlist();
-    const trails = TRAILS.filter(t => ids.includes(t.id));
+    const trails = TRAILS.filter((t) => ids.includes(t.id));
 
     listEl.innerHTML = "";
 
@@ -25,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     emptyEl.style.display = "none";
     listEl.style.display = "block";
 
-    trails.forEach(trail => {
+    trails.forEach((trail) => {
       const row = document.createElement("div");
       row.className = "wishlist-item reveal is-visible";
       row.innerHTML = `
@@ -38,12 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
       listEl.appendChild(row);
     });
 
-    // ყველა "წაშლა" ღილაკზე event listener — event delegation-ის ნაცვლად
-    // პირდაპირ თითოეულზე, რადგან ბარათების რაოდენობა მცირეა (მაქს. 6)
-    listEl.querySelectorAll("button[data-id]").forEach(btn => {
+    listEl.querySelectorAll("button[data-id]").forEach((btn) => {
       btn.addEventListener("click", () => {
         removeFromWishlist(btn.dataset.id);
-        render(); // სიის ხელახლა დახატვა განახლებული მონაცემებით
+        render();
       });
     });
   }
