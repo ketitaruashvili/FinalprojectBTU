@@ -17,7 +17,6 @@ body {
   color: #202821;
   background: #f1ece1;
   line-height: 1.6;
-  /* -webkit-font-smoothing: antialiased; */
 }
 
 img {
@@ -44,32 +43,32 @@ h1,
 h2,
 h3 {
   line-height: 1.05;
-  margin: 0 0 0.4em;
+  margin: 0 0 6px;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: 67px;
   font-weight: 800;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-size: 42px;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 700;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
-  padding: 0.85em 1.6em;
+  gap: 8px;
+  padding: 14px 26px;
   border-radius: 999px;
   font-weight: 600;
-  font-family: "Space Grotesk", sans-serif;
+
   border: 2px solid transparent;
   cursor: pointer;
   transition:
@@ -108,8 +107,8 @@ h3 {
 }
 
 .btn--sm {
-  padding: 0.5em 1em;
-  font-size: 0.85rem;
+  padding: 8px 16px;
+  font-size: 14px;
 }
 
 .btn--danger {
@@ -155,10 +154,10 @@ h3 {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6em;
-  font-family: "Bricolage Grotesque", sans-serif;
+  gap: 10px;
+
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 21px;
 }
 
 .brand__mark {
@@ -170,13 +169,13 @@ h3 {
 
 .nav__links {
   display: flex;
-  gap: 2em;
+  gap: 32px;
   font-weight: 600;
 }
 
 .nav__links a {
   position: relative;
-  padding: 0.2em 0;
+  padding: 3px 0;
 }
 
 .nav__links a::after {
@@ -217,7 +216,7 @@ h3 {
 main {
   flex: 1 0 auto;
 }
-/* ---------- hero ---------- */
+/* hero სექციის დაწყება */
 .hero {
   max-width: 1180px;
   margin-inline: auto;
@@ -238,31 +237,19 @@ main {
 .stat-row {
   display: flex;
   gap: 28px;
-  margin-top: 2em;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
 .stat b {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 1.6rem;
+  font-size: 26px;
   display: block;
   color: #1f3a2e;
 }
 
 .stat span {
-  font-size: 0.82rem;
+  font-size: 13px;
   color: rgba(32, 40, 33, 0.6);
-}
-
-.ridge {
-  width: 100%;
-  height: 28px;
-  display: block;
-  background: #1f3a2e;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpolyline points='0,55 100,20 220,45 340,10 460,40 600,5 740,42 860,15 980,48 1100,18 1200,40 1200,60 0,60' fill='black'/%3E%3C/svg%3E")
-    center/cover;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpolyline points='0,55 100,20 220,45 340,10 460,40 600,5 740,42 860,15 980,48 1100,18 1200,40 1200,60 0,60' fill='black'/%3E%3C/svg%3E")
-    center/cover;
 }
 
 .section {
@@ -317,19 +304,18 @@ main {
 }
 
 .card__tag {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.72rem;
+  font-size: 12px;
   color: #c1623b;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 1px;
 }
 
 .card__meta {
   display: flex;
   gap: 16px;
-  margin-top: 0.8em;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.8rem;
+  margin-top: 13px;
+
+  font-size: 13px;
   color: rgba(32, 40, 33, 0.6);
   flex-wrap: wrap;
 }
@@ -346,11 +332,9 @@ main {
 }
 
 .step b {
-  font-family: "JetBrains Mono", monospace;
   color: #c1623b;
 }
 
-/* ---------- WEATHER WIDGET ---------- */
 .weather-card {
   background: linear-gradient(135deg, #1f3a2e, #142a21);
   color: #fffaf3;
@@ -363,17 +347,17 @@ main {
 }
 
 .weather-card__icon {
-  font-size: 2.6rem;
+  font-size: 42px;
   line-height: 1;
 }
 
 .weather-card__temp {
-  font-size: 2.4rem;
+  font-size: 38px;
   font-weight: 600;
 }
 
 .weather-card__meta {
-  font-size: 0.85rem;
+  font-size: 14px;
   opacity: 0.8;
 }
 
@@ -381,11 +365,7 @@ main {
   opacity: 0.4;
 }
 
-.weather-card.is-error {
-  background: linear-gradient(135deg, #c1623b, #142a21);
-}
-
-/* ---------- EXPLORE FORM ---------- */
+/* explore page  */
 .explore-form {
   display: flex;
   gap: 14px;
@@ -398,9 +378,8 @@ main {
 
 .explore-form select,
 .explore-form input {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  padding: 0.8em 1em;
+  font-size: 16px;
+  padding: 13px 16px;
   border-radius: 10px;
   border: 1px solid rgba(32, 40, 33, 0.2);
   background: #fffaf3;
@@ -443,11 +422,11 @@ main {
 .wishlist-item__info b {
   display: block;
 
-  font-size: 1.1rem;
+  font-size: 18px;
 }
 
 .wishlist-item__info span {
-  font-size: 0.8rem;
+  font-size: 13px;
   color: rgba(32, 40, 33, 0.6);
 }
 
@@ -459,7 +438,7 @@ main {
 
 .empty-state svg {
   width: 64px;
-  margin-bottom: 1em;
+  margin-bottom: 16px;
   opacity: 0.5;
 }
 
@@ -495,7 +474,7 @@ main {
 
 .cookie-banner p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 14px;
   flex: 1;
   min-width: 200px;
 }
@@ -516,7 +495,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 19px;
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
@@ -536,7 +515,6 @@ main {
   background: #a8502e;
 }
 
-/* ---------- forms (contact) ---------- */
 .form {
   display: grid;
   gap: 18px;
@@ -549,17 +527,15 @@ main {
 }
 
 .field label {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.78rem;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 1px;
 }
 
 .field input,
 .field textarea {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  padding: 0.9em 1em;
+  font-size: 16px;
+  padding: 14px 16px;
   border-radius: 10px;
   border: 1px solid rgba(32, 40, 33, 0.2);
   background: #fffaf3;
@@ -577,7 +553,7 @@ main {
 }
 
 .form__note {
-  font-size: 0.85rem;
+  font-size: 14px;
   color: rgba(32, 40, 33, 0.6);
 }
 
@@ -587,8 +563,7 @@ main {
   color: #fffaf3;
   padding: 14px 18px;
   border-radius: 10px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .form__success.is-visible {
@@ -612,17 +587,16 @@ main {
 }
 
 .footer-grid h4 {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.8rem;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 1px;
   color: #c1623b;
-  margin-bottom: 1em;
+  margin-bottom: 16px;
 }
 
 .footer-grid a {
   display: block;
-  margin-bottom: 0.6em;
+  margin-bottom: 10px;
   opacity: 0.85;
   transition: opacity 0.2s;
 }
@@ -640,7 +614,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.82rem;
+  font-size: 13px;
   opacity: 0.7;
   flex-wrap: wrap;
   gap: 12px;
@@ -683,7 +657,7 @@ main {
     background: #f1ece1;
     flex-direction: column;
     padding: 24px;
-    gap: 1.2em;
+    gap: 19px;
     border-bottom: 1px solid rgba(32, 40, 33, 0.1);
     transform: translateY(-110%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -712,6 +686,9 @@ main {
   .nav {
     height: 64px;
   }
+  .burger {
+    display: flex;
+  }
   .hero {
     padding-top: 40px;
   }
@@ -734,11 +711,14 @@ main {
 }
 @media (max-width: 320px) {
   h1 {
-    font-size: 2rem;
+    font-size: 32px;
+  }
+  .burger {
+    display: flex;
   }
   .btn {
-    padding: 0.7em 1.2em;
-    font-size: 0.92rem;
+    padding: 11px 19px;
+    font-size: 15px;
   }
   .wishlist-item {
     flex-direction: column;
